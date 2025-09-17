@@ -4,54 +4,45 @@ A FastAPI-based backend for managing On-Duty (OD) applications, event requests, 
 
 ## Project Structure
 
-```
-OD_backend/
-│   .env
-│   .gitignore
-│   bcrypt.py
-│   requirements.txt
-│
-└───app/
-    │   database.py
-    │   main.py
-    │
-    ├───deps/
-    │       auth.py
-    │
-    ├───models/
-    │       admin.py
-    │       event_request.py
-    │       event.py
-    │       faculty_student_mapping.py
-    │       faculty.py
-    │       od_application.py
-    │       student.py
-    │       user_otp.py
-    │
-    ├───repositories/
-    │       events.py
-    │       od_applications.py
-    │
-    ├───routers/
-    │   ├───auth/
-    │   ├───events/
-    │   ├───faculty/
-    │   │       event_requests.py
-    │   ├───student/
-    │   │       event_requests.py
-    │   │       od_applications.py
-    │
-    ├───schemas/
-    │       event.py
-    │       event_request.py
-    │       od_application.py
-    │
-    ├───services/
-    │       event_requests.py
-    │       events.py
-    │       od_applications.py
-    │
-    └───utils/
+```OD_backend/
+├── app/
+│   ├── models/
+│   │   ├── admin.py
+│   │   ├── event_request.py
+│   │   ├── event.py
+│   │   ├── faculty_student_mapping.py
+│   │   ├── faculty.py
+│   │   ├── od_application.py
+│   │   ├── student.py
+│   │   └── user_otp.py
+│   ├── repositories/
+│   │   ├── events.py
+│   │   └── od_applications.py
+│   ├── routers/
+│   │   ├── auth/
+│   │   │   ├── admin.py
+│   │   │   ├── faculty.py
+│   │   │   └── student.py
+│   │   ├── events/
+│   │   │   └── faculty_events.py
+│   │   ├── faculty/
+│   │   │   ├── od_academic_head.py
+│   │   │   └── od_counsellor.py
+│   │   └── student/
+│   │       └── od_applications.py
+│   ├── schemas/
+│   │   ├── auth.py
+│   │   ├── event.py
+│   │   └── od_application.py
+│   ├── services/
+│   │   ├── events.py
+│   │   └── od_applications.py
+│   └── utils/
+│       ├── database.py
+│       ├── email.py
+│       ├── security.py
+│       └── validators.py
+└── main.py
 ```
 
 ## Features
